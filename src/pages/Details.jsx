@@ -20,6 +20,7 @@ const Details = () => {
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     const controller = new AbortController();
     setLoading(true);
     const fetchData = async () => {
@@ -45,7 +46,9 @@ const Details = () => {
         <div className="linear-gradient mt-12">
           <div className="container py-24 flex flex-wrap  gap-10 justify-between items-center">
             <div>
-              <h4 className="body uppercase text-yellow-600">{mediaType=='tv'?'tv series':'movie'}</h4>
+              <h4 className="body uppercase text-yellow-600">
+                {mediaType == "tv" ? "tv series" : "movie"}
+              </h4>
               <h1 className="heading_xl text-gray-100 uppercase">
                 {details?.original_title || details?.original_name}
               </h1>
